@@ -26,11 +26,12 @@ app.use(express.json())
 
 // Routes
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to the server' })
+    // res.json({ message: 'Welcome to the server' })
+    res.render('index')
 })
 
 // Public files
-app.use(express.static(join(__dirname, )))
+app.use(express.static(join(__dirname, 'public')))
 
 // Run server
 app.listen(app.get('port'), () => {
